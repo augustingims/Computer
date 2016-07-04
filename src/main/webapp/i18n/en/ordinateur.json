@@ -1,0 +1,32 @@
+{
+    "devbridgeApp": {
+        "ordinateur" : {
+            "home": {
+                "title": "Ordinateurs",
+                "createLabel": "Create a new Ordinateur",
+                "createOrEditLabel": "Create or edit a Ordinateur"
+            },
+            "created": "A new Ordinateur is created with identifier {{ param }}",
+            "updated": "A Ordinateur is updated with identifier {{ param }}",
+            "deleted": "A Ordinateur is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ordinateur {{ id }}?"
+            },
+            "detail": {
+                "title": "Ordinateur"
+            },
+            "name": "Name",
+            "type": "Type",
+            "cpu": "Cpu",
+            "ram": "Ram",
+            "lecteur": "Lecteur",
+            "graveur": "Graveur",
+            "bluetooth": "Bluetooth",
+            "wifi": "Wifi",
+            "cartegraphique": "Cartegraphique",
+            "dd": "Dd",
+            "tailleecran": "Tailleecran",
+            "webcam": "Webcam"
+        }
+    }
+}

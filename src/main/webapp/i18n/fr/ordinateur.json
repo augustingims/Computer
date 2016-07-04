@@ -1,0 +1,30 @@
+{
+    "devbridgeApp": {
+        "ordinateur" : {
+            "home": {
+                "title": "Ordinateurs",
+                "createLabel": "Créer un nouveau Ordinateur",
+                "createOrEditLabel": "Créer ou éditer un Ordinateur"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ordinateur {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ordinateur"
+            },
+            "name": "Name",
+            "type": "Type",
+            "cpu": "Cpu",
+            "ram": "Ram",
+            "lecteur": "Lecteur",
+            "graveur": "Graveur",
+            "bluetooth": "Bluetooth",
+            "wifi": "Wifi",
+            "cartegraphique": "Cartegraphique",
+            "dd": "Dd",
+            "tailleecran": "Tailleecran",
+            "webcam": "Webcam"
+        }
+    }
+}
+

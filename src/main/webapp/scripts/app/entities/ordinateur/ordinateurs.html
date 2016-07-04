@@ -1,0 +1,104 @@
+<div>
+    <h2 translate="devbridgeApp.ordinateur.home.title">Ordinateurs</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="ordinateur.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="devbridgeApp.ordinateur.home.createLabel">Create a new Ordinateur</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteOrdinateurConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(ordinateur.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="devbridgeApp.ordinateur.delete.question" translate-values="{id: '{{ordinateur.id}}'}">Are you sure you want to delete this Ordinateur?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th>image</th>
+                    <th translate="devbridgeApp.ordinateur.name">Name</th>
+                    <th translate="devbridgeApp.ordinateur.type">Type</th>
+                    <th>Marque</th>
+                    <th translate="devbridgeApp.ordinateur.cpu">Cpu</th>
+                    <th translate="devbridgeApp.ordinateur.ram">Ram</th>
+                    <th translate="devbridgeApp.ordinateur.lecteur">Lecteur</th>
+                    <th translate="devbridgeApp.ordinateur.graveur">Graveur</th>
+                    <th translate="devbridgeApp.ordinateur.bluetooth">Bluetooth</th>
+                    <th translate="devbridgeApp.ordinateur.wifi">Wifi</th>
+                    <th translate="devbridgeApp.ordinateur.cartegraphique">Cartegraphique</th>
+                    <th translate="devbridgeApp.ordinateur.dd">Dd</th>
+                    <th translate="devbridgeApp.ordinateur.tailleecran">Tailleecran</th>
+                    <th translate="devbridgeApp.ordinateur.webcam">Webcam</th>
+                    <th>Prix</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ordinateur in ordinateurs">
+                    <td><a ui-sref="ordinateur.detail({id:ordinateur.id})">{{ordinateur.id}}</a></td>
+                    <td>
+                        <a href="#" title="ordinateur.name" class="zoom" data-title="ordinateur">
+                        <img class="img-responsive img-rounded"  data-ng-src="{{'data:image/*;base64,' + ordinateur.image}}" style="height: 100px;width: 100px"  />
+                       </a>
+                    </td>
+                    <td>{{ordinateur.name}}</td>
+                    <td>{{ordinateur.type}}</td>
+                    <td>{{ordinateur.marque}}</td>
+                    <td>{{ordinateur.cpu}}</td>
+                    <td>{{ordinateur.ram}}</td>
+                    <td>{{ordinateur.lecteur}}</td>
+                    <td>{{ordinateur.graveur}}</td>
+                    <td>{{ordinateur.bluetooth}}</td>
+                    <td>{{ordinateur.wifi}}</td>
+                    <td>{{ordinateur.cartegraphique}}</td>
+                    <td>{{ordinateur.dd}}</td>
+                    <td>{{ordinateur.tailleecran}}</td>
+                    <td>{{ordinateur.webcam}}</td>
+                    <td>{{ordinateur.prix}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="ordinateur.detail({id:ordinateur.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="ordinateur.edit({id:ordinateur.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(ordinateur.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

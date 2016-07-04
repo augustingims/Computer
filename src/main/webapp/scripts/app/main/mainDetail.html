@@ -1,0 +1,170 @@
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="#/">Home</a></li>
+                <li class="active">ordinateur</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{ordinateur.name}}
+                <small>{{ordinateur.type}}</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-6">
+            <img  class="img-rounded img-responsive" data-ng-src="{{'data:image/*;base64,' + ordinateur.image}}" style="height: auto;width: 600px"  ng-if="ordinateur.image"/>
+            <br>
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <span class="glyphicon glyphicon-log-in"></span> &nbsp;<a href="#" ng-click="signin()">Sign in</a>
+                </div>
+                <div class="col-sm-9 col-md-9">
+                    <span class="glyphicon glyphicon-comment"></span>&nbsp;{{nbrecomment}} Comments &nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+            <a class="btn btn-primary btn-lg" href="#" ><span class="text-capitalize">{{ordinateur.prix}} FCFA</span></a>
+
+                <span class="btn btn-primary btn-lg" ng-click="saveshop()"><i class="glyphicon glyphicon-shopping-cart" ></i></span>
+            </div>
+            <h3>Description</h3>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Carateristique</th>
+                        <th>Valeur de Carateristique</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>CPU</td>
+                        <td>{{ordinateur.cpu}}</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>{{ordinateur.ram}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lecteur</td>
+                        <td>{{ordinateur.lecteur}}</td>
+                    </tr>
+                    <tr>
+                        <td>Graveur</td>
+                        <td>{{ordinateur.graveur}}</td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth</td>
+                        <td>{{ordinateur.bluetooth}}</td>
+                    </tr>
+                    <tr>
+                        <td>Wifi</td>
+                        <td>{{ordinateur.wifi}}</td>
+                    </tr>
+                    <tr>
+                        <td>Carte Graphique</td>
+                        <td>{{ordinateur.cartegraphique}}</td>
+                    </tr>
+                    <tr>
+                        <td>Disque Dur</td>
+                        <td>{{ordinateur.dd}}</td>
+                    </tr>
+                    <tr>
+                        <td>Taille Ecran</td>
+                        <td>{{ordinateur.tailleecran}}</td>
+                    </tr>
+                    <tr>
+                        <td>Webcam</td>
+                        <td>{{ordinateur.webcam}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header">
+                    <h3 class="reviews">commentaire</h3>
+                </div>
+                <div class="comment-tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Comments</h4></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <ul class="media-list"  ng-repeat="com in commentaires">
+                                <li class="media">
+                                    <a class="pull-left" href="#">
+
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="well well-lg">
+                                            <h4 class="media-heading text-uppercase reviews">{{com.pseudo}} </h4>
+                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                {{com.date | date:'yyyy-MM-dd HH:mm'}}
+                                            </ul>
+                                            <p class="media-comment">
+                                                {{com.message}}
+                                            </p>
+                                            <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span>Like</a>
+                                            <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-thumbs-down img-circle text-primary"></span>UnLike</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="page-header">
+                            <h3 class="reviews">Add Commentaire</h3>
+                        </div>
+                            <form  class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="pseudo" class="col-sm-2 control-label">Pseudo</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  id="pseudo" ng-model="commentaire.pseudo" name="pseudo"  placeholder="pseudo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="email" name="email" ng-model="commentaire.email" placeholder="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="phone" class="form-control" ng-model="commentaire.phone" name="phone" placeholder="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="col-sm-2 control-label">Message</label>
+                                    <div class="col-sm-10">
+                                        <textarea id="message" style="height: 150px" class="form-control" placeholder="Message" ng-model="commentaire.message" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button class="btn btn-primary btn-circle text-uppercase" type="button" ng-click="submit(ordinateur.id)">Commenter</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

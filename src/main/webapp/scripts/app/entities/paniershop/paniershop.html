@@ -1,0 +1,56 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-lg" ng-click="vider()">
+                    <span class="glyphicon glyphicon-floppy-remove"></span><span>Vider</span>
+                </button>
+            </div>
+            <div class="col-md-6">
+                Cliquez pour avoir votre Montant <a class="btn btn-primary btn-lg" href="#" ng-click="total()"><span class="text-capitalize">{{prixtotal}} FCFA</span></a>
+            </div>
+        </div>
+    </div>
+    <h2>Elements du panier</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Ordinateur</th>
+                <th>Prix</th>
+                <th>Date</th>
+                <th>Auteur</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="panier in paniershops">
+                <td></td>
+                <td>
+                    <a href="#/ordinateur/{{panier.image}}" class="zoom" >
+                        <img class="img-responsive" data-ng-src="http://127.0.0.1:8080/api/ordinateur/getImg/{{panier.image}}" style="height: 100px;width: 100px" />
+                    </a>
+                </td>
+                <td>{{panier.prix}}</td>
+                <td>{{panier.date | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>{{panier.auteur}}</td>
+                <td>
+                    <button type="submit"
+                            ng-click="delete(panier.id)"
+                            class="btn btn-danger btn-lg">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-lg" ng-click="payer(panier.prix)">
+                        <span>Pay Now</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

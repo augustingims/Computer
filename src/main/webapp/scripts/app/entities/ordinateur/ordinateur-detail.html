@@ -1,0 +1,142 @@
+
+<div>
+    <h2><span translate="devbridgeApp.ordinateur.detail.title">Ordinateur</span> {{ordinateur.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.cpu">Cpu</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.cpu}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Marque</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.marque}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.ram">Ram</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.ram}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.lecteur">Lecteur</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.lecteur}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.graveur">Graveur</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.graveur}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.bluetooth">Bluetooth</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.bluetooth}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.wifi">Wifi</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.wifi}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.cartegraphique">Cartegraphique</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.cartegraphique}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.dd">Dd</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.dd}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.tailleecran">Tailleecran</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.tailleecran}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="devbridgeApp.ordinateur.webcam">Webcam</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.webcam}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Prix</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{ordinateur.prix}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Image</span>
+                </td>
+                <td>
+                    <img class="img-responsive img-rounded"  data-ng-src="{{'data:image/*;base64,' + ordinateur.image}}" style="height: 100px;width: 100px"  />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,128 @@
+
+    <h4 class="modal-title" id="myOrdinateurLabel" translate="devbridgeApp.ordinateur.home.createOrEditLabel">Create or edit a Ordinateur</h4>
+
+    <div class="row">
+        <form name="editForm" role="form" novalidate>
+        <jh-alert-error></jh-alert-error>
+        <div class="col-lg-6">
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="ordinateur.name"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="ordinateur.type"
+                    >
+        </div>
+            <div class="form-group">
+                <label for="field_marque">Marque</label>
+                <input type="text" class="form-control" name="marque" id="field_marque"
+                       ng-model="ordinateur.marque"
+                    >
+            </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.cpu" for="field_cpu">Cpu</label>
+            <input type="text" class="form-control" name="cpu" id="field_cpu"
+                    ng-model="ordinateur.cpu"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.ram" for="field_ram">Ram</label>
+            <input type="text" class="form-control" name="ram" id="field_ram"
+                    ng-model="ordinateur.ram"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.lecteur" for="field_lecteur">Lecteur</label>
+            <input type="text" class="form-control" name="lecteur" id="field_lecteur"
+                    ng-model="ordinateur.lecteur"
+                    >
+        </div>
+            <div class="form-group" ngf-drop
+                 ngf-change="setImage($files, ordinateur)" ngf-accept="'image/*'">
+                <label for="field_image">Image</label>
+                <div>
+
+						<span type="file" ngf-select required
+                              class=" btn btn-lg btn-default col-lg-4  well-lg"
+                              ngf-change="setImage($files, ordinateur)" accept="image/*"> + </span> <span
+                    class="col-lg-6 col-lg-offset-2 well"> <img
+                    data-ng-src="{{'data:image/*;base64,' + ordinateur.image}}"
+                    style="max-height: 100px;" ng-if="ordinateur.image" /> <span
+                    ng-click="ordinateur.image=null" ng-if="ordinateur.image"
+                    class="btn btn-default btn-xs pull-right"> <span
+                    class="glyphicon glyphicon-remove"></span>
+						</span> <span class="">{{byteSize(ordinateur.image)}}</span>
+						</span>
+                </div>
+                <input type="hidden" class="form-control" name="image" id="field_image"
+                       ng-model="ordinateur.image">
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.graveur" for="field_graveur">Graveur</label>
+            <input type="text" class="form-control" name="graveur" id="field_graveur"
+                    ng-model="ordinateur.graveur"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.bluetooth" for="field_bluetooth">Bluetooth</label>
+            <input type="text" class="form-control" name="bluetooth" id="field_bluetooth"
+                    ng-model="ordinateur.bluetooth"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.wifi" for="field_wifi">Wifi</label>
+            <input type="text" class="form-control" name="wifi" id="field_wifi"
+                    ng-model="ordinateur.wifi"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.cartegraphique" for="field_cartegraphique">Cartegraphique</label>
+            <input type="text" class="form-control" name="cartegraphique" id="field_cartegraphique"
+                    ng-model="ordinateur.cartegraphique"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.dd" for="field_dd">Dd</label>
+            <input type="text" class="form-control" name="dd" id="field_dd"
+                    ng-model="ordinateur.dd"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.tailleecran" for="field_tailleecran">Tailleecran</label>
+            <input type="text" class="form-control" name="tailleecran" id="field_tailleecran"
+                    ng-model="ordinateur.tailleecran"
+                    >
+        </div>
+        <div class="form-group">
+            <label translate="devbridgeApp.ordinateur.webcam" for="field_webcam">Webcam</label>
+            <input type="text" class="form-control" name="webcam" id="field_webcam"
+                    ng-model="ordinateur.webcam"
+                    >
+        </div>
+            <div class="form-group">
+                <label for="field_prix">Prix</label>
+                <input type="text" class="form-control" name="prix" id="field_prix"
+                       ng-model="ordinateur.prix"
+                    >
+            </div>
+        </div>
+
+</form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary" ng-click="save()">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+

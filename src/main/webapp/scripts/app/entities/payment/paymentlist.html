@@ -1,0 +1,31 @@
+<div>
+
+    <h2>Payment effectuer</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name Card</th>
+                <th>Number Card</th>
+                <th>Mois</th>
+                <th>Annee</th>
+                <!--<th>Montant</th>-->
+                <th>Card CVV</th>
+                <th>Auteur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="pay in payments">
+                <td>{{pay.namecard}}</td>
+                <td>{{pay.numbercard}}</td>
+                <td>{{pay.mois}}</td>
+                <td>{{pay.annee}}</td>
+               <!-- <td>{{pay.montant}}</td>-->
+                <td>{{pay.cardcv}}</td>
+                <td>{{pay.login}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

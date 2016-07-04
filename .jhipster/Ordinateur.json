@@ -1,0 +1,68 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "cpu",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "ram",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "lecteur",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "graveur",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "bluetooth",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "wifi",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "cartegraphique",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "dd",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "tailleecran",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "webcam",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151121163417",
+    "dto": "no",
+    "pagination": "no"
+}
